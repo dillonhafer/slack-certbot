@@ -1,0 +1,6 @@
+{
+	"ImportPath": "github.com/dillonhafer/certbot-bot",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v74",
+	"Deps": []
+}
