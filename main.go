@@ -19,11 +19,19 @@ func DomainName(r *http.Request) string {
 	}
 }
 
+func UserName(r *http.Request) (user string) {
+	user = r.FormValue("user_name")
+	if user == "" {
+		user = "Me"
+	}
+	return
+}
+
 func root(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	domain := DomainName(r)
-	user := r.FormValue("user_name")
+	user := UserName(r)
 
 	cert := NewCert(user, domain)
 
